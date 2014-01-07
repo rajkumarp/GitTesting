@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomCollectionCell.h"
+#import "NextViewController.h"
 
 #define kCellCount 50
 #define kCellIdentifier @"customCollectionCell"
@@ -80,6 +81,21 @@
                    layout:(CustomCollectionViewLayout *)collectionViewLayout
  heightForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self.cellHeights[indexPath.item] floatValue];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NextViewController *vc  = [[NextViewController alloc] init];
+//    [controll.view setBackgroundColor:[UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:0.5]];
+//    [controll.view setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5]];
+//    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    [self presentViewController:vc animated:YES completion:NULL];
+    
+    NextViewController *vc = [[NextViewController alloc] init];
+    vc.view.backgroundColor = [UIColor clearColor];
+    
+    [self presentViewController:vc animated:NO completion:nil];
+    
 }
 
 
